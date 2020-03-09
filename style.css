@@ -1,0 +1,153 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Acme", sans-serif;
+}
+
+#navbar {
+  height: 6vh;
+  background-color: #5cdb95;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+#navbar .container {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+}
+
+#navbar .container .logo {
+  justify-self: start;
+  padding: 0.5em 0 0 0.5em;
+}
+
+h1 {
+  color: #05386b;
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 0.2em;
+}
+
+a {
+  text-decoration: none;
+  color: #05386b;
+}
+
+h2,
+h3,
+p {
+  color: #05386b;
+}
+
+#navbar .container #searchbar {
+  justify-self: end;
+  align-self: center;
+  width: 80%;
+  height: 100%;
+  margin-top: 0.75em;
+}
+
+#searchbar::placeholder {
+  font-family: "Acme", sans-serif;
+  font-size: 20px;
+}
+
+input[type="text"] {
+  font-size: 20px;
+  font-family: "Acme", sans-serif;
+  border: 1px solid #05386b;
+  border-radius: 5px;
+}
+
+section {
+  background: url("map.svg") no-repeat center center/cover;
+  background-attachment: fixed;
+}
+
+#output {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.country {
+  margin-top: 5vh;
+  width: 70%;
+  background-color: #5cdb95;
+  border: 1px solid #05386b;
+  color: #05386b;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: repeat(6, 1fr);
+  grid-template-areas:
+    "name name name"
+    "native native native"
+    "capital flag languages"
+    "area region currency"
+    "population borders timezone"
+    "internet internet internet";
+  text-align: center;
+  border-radius: 6px;
+}
+
+.flag {
+  justify-self: center;
+  align-self: center;
+}
+
+.country > .name {
+  grid-area: name;
+}
+.country > .native {
+  grid-area: native;
+}
+.country > .capital {
+  grid-area: capital;
+}
+.country > .area {
+  grid-area: area;
+}
+.country > .population {
+  grid-area: population;
+}
+.country > .flag {
+  grid-area: flag;
+}
+.country > .region {
+  grid-area: region;
+}
+.country > .borders {
+  grid-area: borders;
+}
+.country > .languages {
+  grid-area: languages;
+}
+.country > .currency {
+  grid-area: currency;
+}
+.country > .timezone {
+  grid-area: timezone;
+}
+.country > .internet {
+  grid-area: internet;
+}
+
+.country > h1,
+.country > .native {
+  text-align: center;
+}
+
+.country:hover {
+  opacity: 0.9;
+}
+
+@media (max-width: 768px) {
+  #navbar {
+    height: 12vh;
+  }
+}
